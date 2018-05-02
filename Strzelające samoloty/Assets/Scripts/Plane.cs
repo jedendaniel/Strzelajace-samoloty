@@ -22,7 +22,7 @@ public class PlaneDetails
 
 public class Plane : MonoBehaviour
 {
-    public PlaneDetails details { get; set; }
+    public PlaneDetails details;
 
     [SerializeField]
     private Image healthBar;
@@ -58,28 +58,13 @@ public class Plane : MonoBehaviour
         customInput.Init();
     }
 
-    private void Awake()
-    {
-        
-    }
-
-    private void OnEnable()
-    {
-    }
-
     private void Update()
-    {
-    }
-
-    void FixedUpdate()
     {
         float rotation = customInput.GetAxis("Horizontal");
         if (rotation != 0)
         {
             Rotate(rotation);
         }
-        
-
         if (inBase && healthPoints < details.maxHealth)
         {
             if (baseTime + details.healDelay <= Time.fixedTime)
@@ -98,32 +83,11 @@ public class Plane : MonoBehaviour
         }
     }
 
-    public void RotateLeft()
-    {
-        //rb.angularVelocity = 0;
-        //rb.rotation += details.rotateScale;
-    }
-
-    public void RotateRight()
-    {
-        //rb.angularVelocity = 0;
-        //rb.rotation -= details.rotateScale;
-    }
-
     public void Rotate(float rotation)
     {
 
         rb.angularVelocity = 0;
         rb.rotation += rotation * details.rotateScale;
-    }
-
-    public void Move(float force)
-    {
-        if (rb.velocity.magnitude < details.maxVelocity || (rb.velocity.x >= 0 && transform.up.x <= 0) || (rb.velocity.x <= 0 && transform.up.x >= 0)
-            || (rb.velocity.y >= 0 && transform.up.y <= 0) || (rb.velocity.y <= 0 && transform.up.y >= 0))
-        {
-            rb.AddForce(transform.up * force * details.forceScale);
-        }
     }
 
     public void Shoot()

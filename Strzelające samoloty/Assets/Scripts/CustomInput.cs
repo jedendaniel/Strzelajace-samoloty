@@ -8,9 +8,6 @@ using UnityEngine;
 public class CustomInput
 {
     private Dictionary<string, InputAxis> axesDict = new Dictionary<string, InputAxis>();
-    //{
-    //    {"Horizontal", new InputAxis(KeyCode.A,KeyCode.D)}
-    //};
 
     [SerializeField]
     private InputAxis[] axesArray;
@@ -21,7 +18,6 @@ public class CustomInput
 
     public void Init()
     {
-        //axesArray = new InputAxis[axesDict.Count];
         for(int i = 0; i < actionsArray.Length; i++)
         {
             axesDict.Add(actionsArray[i], axesArray[i]);

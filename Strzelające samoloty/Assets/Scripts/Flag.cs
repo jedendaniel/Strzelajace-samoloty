@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Flag : MonoBehaviour {
-
-    //public Joint2D joint;
+    
     public LineRenderer line;
     public Transform flagAnchor1;
     public Transform flagAnchor2;
@@ -17,18 +16,13 @@ public class Flag : MonoBehaviour {
     bool linked = false;
 
     public bool inBase = true;
-
-    // Use this for initialization
+    
     void Start () {
-        //PolygonCollider2D collider = GetComponentInChildren<PolygonCollider2D>();
-        //line1.SetPosition(0, collider.points[1]);
-        //line1.SetPosition(2, collider.points[2]);
         linked = false;
         inBase = true;
         basePosition = transform.position;
     }
 	
-	// Update is called once per frame
 	void Update () {
         if (linked)
         {
@@ -63,12 +57,9 @@ public class Flag : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Rigidbody2D rb = joint.GetComponent<Rigidbody2D>();
-        //rb = collision.GetComponent<Rigidbody2D>();
         switch (collision.tag)
         {
             case "Plane":
-                //joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                 break;
         }
     }

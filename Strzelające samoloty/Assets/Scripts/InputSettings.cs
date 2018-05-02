@@ -20,22 +20,16 @@ public class InputSettings{
 
     public static KeyCode[] defaultCtrl1 = new KeyCode[]{
         KeyCode.W,
-        KeyCode.A,
-        KeyCode.D,
         KeyCode.Space
     };
     public static KeyCode[] defaultCtrl2 = new KeyCode[]{
         KeyCode.UpArrow,
-        KeyCode.LeftArrow,
-        KeyCode.RightArrow,
         KeyCode.Return
     };
 
     static string[] actions = new string[]
     {
         "forward",
-        "left",
-        "right",
         "shoot"
     };
 
@@ -51,8 +45,6 @@ public class InputSettings{
         methods = new Action[]
         {
             plane.MoveForward,
-            plane.RotateLeft,
-            plane.RotateRight,
             plane.Shoot
         };
         KeyMapping = new Dictionary<string, InputEntity>();
