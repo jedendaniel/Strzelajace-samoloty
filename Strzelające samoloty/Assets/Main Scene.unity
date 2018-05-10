@@ -171,6 +171,15 @@ Prefab:
       propertyPath: plane
       value: 
       objectReference: {fileID: 1651243586}
+    - target: {fileID: 114601260786038984, guid: bf91386cc93957646a5072224169703a,
+        type: 2}
+      propertyPath: StickAnchor
+      value: 
+      objectReference: {fileID: 1825698088}
+    - target: {fileID: 1481883081887208, guid: bf91386cc93957646a5072224169703a, type: 2}
+      propertyPath: m_Name
+      value: StickAnchor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf91386cc93957646a5072224169703a, type: 2}
   m_IsPrefabParent: 0
@@ -390,7 +399,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1838663640240682, guid: f888803768a92cb41b4ed9dda90f3846, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114400085722939326, guid: f888803768a92cb41b4ed9dda90f3846,
         type: 2}
@@ -494,7 +503,7 @@ MonoBehaviour:
     axesArray:
     - positiveButton: 97
       negativeButton: 100
-      sensitivity: 0.03
+      sensitivity: 0.02
       maxRotationValue: 2
 --- !u!4 &688811905
 Transform:
@@ -615,7 +624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5fcc680a4d45c44a6efbab3717b375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGameMessage: {fileID: 0}
+  endGameMessage: {fileID: 1052130595}
+  planes:
+  - {fileID: 1651243586}
+  - {fileID: 1994375406}
 --- !u!1 &1052130593
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +702,54 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052130593}
+--- !u!1 &1203187392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1203187394}
+  - component: {fileID: 1203187393}
+  m_Layer: 0
+  m_Name: Player2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1203187393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203187392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abda2dcb58238c4eb0032bca71aa636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 1994375406}
+  teamNumber: 2
+  customInput:
+    axesArray:
+    - positiveButton: 276
+      negativeButton: 275
+      sensitivity: 0.02
+      maxRotationValue: 2
+--- !u!4 &1203187394
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203187392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3470173, y: -0.41971704, z: -0.11892046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1290121121 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224815777637716092, guid: 2a51a47602a8c794692c8d78f575b5c1,
@@ -875,6 +935,20 @@ Prefab:
         type: 2}
       propertyPath: m_Positions.Array.data[2].x
       value: 6.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114601260786038984, guid: bf91386cc93957646a5072224169703a,
+        type: 2}
+      propertyPath: plane
+      value: 
+      objectReference: {fileID: 1994375406}
+    - target: {fileID: 114601260786038984, guid: bf91386cc93957646a5072224169703a,
+        type: 2}
+      propertyPath: StickAnchor
+      value: 
+      objectReference: {fileID: 1960072044}
+    - target: {fileID: 1481883081887208, guid: bf91386cc93957646a5072224169703a, type: 2}
+      propertyPath: m_Name
+      value: StickAnchor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf91386cc93957646a5072224169703a, type: 2}
@@ -1154,6 +1228,10 @@ Prefab:
     - target: {fileID: 114400085722939326, guid: f888803768a92cb41b4ed9dda90f3846,
         type: 2}
       propertyPath: details.teamNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838663640240682, guid: f888803768a92cb41b4ed9dda90f3846, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1494,7 +1572,7 @@ RectTransform:
   m_GameObject: {fileID: 1709546404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 84.63}
-  m_LocalScale: {x: 0.0149700595, y: 0.0149700595, z: 0.0149700595}
+  m_LocalScale: {x: 0.014814815, y: 0.014814815, z: 0.014814815}
   m_Children:
   - {fileID: 1379729920}
   - {fileID: 1556017495}
@@ -1555,6 +1633,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46240be989b90e644b730c7c1f22e60d, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1825698088 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4032399984834350, guid: bf91386cc93957646a5072224169703a,
+    type: 2}
+  m_PrefabInternal: {fileID: 242430560}
 --- !u!1001 &1924668567
 Prefab:
   m_ObjectHideFlags: 0
@@ -1664,6 +1747,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224815777637716092, guid: 2a51a47602a8c794692c8d78f575b5c1,
     type: 2}
   m_PrefabInternal: {fileID: 1924668567}
+--- !u!4 &1960072044 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4032399984834350, guid: bf91386cc93957646a5072224169703a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1355683805}
+--- !u!114 &1994375406 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114400085722939326, guid: f888803768a92cb41b4ed9dda90f3846,
+    type: 2}
+  m_PrefabInternal: {fileID: 310209149}
+  m_Script: {fileID: 11500000, guid: bda15ef925482a146a227f6a00d9fd42, type: 3}
 --- !u!4 &2098249369 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4288506048247072, guid: bf91386cc93957646a5072224169703a,

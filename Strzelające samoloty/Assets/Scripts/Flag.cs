@@ -9,6 +9,7 @@ public class Flag : MonoBehaviour {
     public Transform flagAnchor2;
     public Plane plane;
     Vector3 basePosition;
+    public Transform StickAnchor;
 
     Transform anchorPoint;
 
@@ -26,9 +27,7 @@ public class Flag : MonoBehaviour {
 	void Update () {
         if (linked)
         {
-            line.SetPosition(0, flagAnchor1.position);
-            line.SetPosition(1, anchorPoint.position);
-            line.SetPosition(2, flagAnchor2.position);
+            UpdateLine();
         }
     }
 
@@ -42,6 +41,14 @@ public class Flag : MonoBehaviour {
         transform.GetComponent<Rigidbody2D>().mass = 0.0f;
         transform.rotation = new Quaternion(0, 0, 1, -1f);
         inBase = true;
+        Unlink();
+    }
+
+    void UpdateLine()
+    {
+        line.SetPosition(0, flagAnchor1.position);
+        line.SetPosition(1, anchorPoint.position);
+        line.SetPosition(2, flagAnchor2.position);
     }
 
     public void Link(Transform point)
@@ -52,7 +59,9 @@ public class Flag : MonoBehaviour {
 
     public void Unlink()
     {
+        anchorPoint = StickAnchor;
         linked = false;
+        UpdateLine();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,7 +81,7 @@ public class Flag : MonoBehaviour {
                 Plane p = other.GetComponent<Plane>();
                 if (p.flag == null)
                 {
-                    if (teamNumber != plane.details.teamNumber || (teamNumber == plane.details.teamNumber && !inBase))
+                    if (teamNumber != p.details.teamNumber || (teamNumber == p.details.teamNumber && !inBase))
                     {
                         transform.Find("FlagAnchor1").GetComponent<DistanceJoint2D>().connectedBody = other.transform.Find("PlaneAnchor1").GetComponent<Rigidbody2D>();
                         transform.Find("FlagAnchor2").GetComponent<DistanceJoint2D>().connectedBody = other.transform.Find("PlaneAnchor1").GetComponent<Rigidbody2D>();
@@ -85,7 +94,7 @@ public class Flag : MonoBehaviour {
                         plane = p;
                         inBase = false;
                         plane.flag = this;
-                        Link(other.transform.parent.transform.Find("PlaneAnchor1"));
+                        Link(p.transform.Find("PlaneAnchor1"));
                     }
                 }
                 break;

@@ -112,7 +112,7 @@ public class Plane : MonoBehaviour
             healthBar.fillAmount = 0;
             healthPoints = 0;
             GameObject go = GameObject.Find("GameManager");
-            ((GameManager)go.GetComponent(typeof(GameManager))).EndGame(name);
+            ((GameManager)go.GetComponent(typeof(GameManager))).EndGame(this);
         }
     }
 
@@ -140,7 +140,7 @@ public class Plane : MonoBehaviour
                     else
                     {
                         GameObject go = GameObject.Find("GameManager");
-                        ((GameManager)go.GetComponent(typeof(GameManager))).EndGame(details.name);
+                        ((GameManager)go.GetComponent(typeof(GameManager))).WinGame(this);
                     }
                 }
                 break;
@@ -159,29 +159,30 @@ public class Plane : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        switch (other.tag)
-        {
-            //case "Flag":
-            //    if(flag == null)
-            //    {
-            //        Flag flag = other.transform.parent.GetComponent<Flag>();
-            //        if (flag.teamNumber != this.details.teamNumber || (flag.teamNumber == this.details.teamNumber && !flag.inBase))
-            //        {
-            //            other.transform.parent.transform.Find("FlagAnchor1").GetComponent<DistanceJoint2D>().connectedBody = planeAnchor1.GetComponent<Rigidbody2D>();
-            //            other.transform.parent.transform.Find("FlagAnchor2").GetComponent<DistanceJoint2D>().connectedBody = planeAnchor1.GetComponent<Rigidbody2D>();
-            //            flag.transform.GetComponent<Rigidbody2D>().gravityScale = 0.3f;
-            //            flag.transform.GetComponent<Rigidbody2D>().mass = 0.05f;
-            //            if (flag.plane != null)
-            //            {
-            //                flag.plane.flag = null;
-            //            }
-            //            flag.plane = this;
-            //            flag.inBase = false;
-            //            this.flag = flag;
-            //            flag.Link(planeAnchor1);
-            //        }
-            //    }
-            //    break;
-        }
+        //switch (other.tag)
+        //{
+        //    case "Flag":
+        //        if (flag == null)
+        //        {
+        //            Flag flag = other.transform.parent.GetComponent<Flag>();
+        //            if (flag.teamNumber != this.details.teamNumber || (flag.teamNumber == this.details.teamNumber && !flag.inBase))
+        //            {
+        //                Debug.Log("flag");
+        //                other.transform.parent.transform.Find("FlagAnchor1").GetComponent<DistanceJoint2D>().connectedBody = planeAnchor1.GetComponent<Rigidbody2D>();
+        //                other.transform.parent.transform.Find("FlagAnchor2").GetComponent<DistanceJoint2D>().connectedBody = planeAnchor1.GetComponent<Rigidbody2D>();
+        //                flag.transform.GetComponent<Rigidbody2D>().gravityScale = 0.3f;
+        //                flag.transform.GetComponent<Rigidbody2D>().mass = 0.05f;
+        //                if (flag.plane != null)
+        //                {
+        //                    flag.plane.flag = null;
+        //                }
+        //                flag.plane = this;
+        //                flag.inBase = false;
+        //                this.flag = flag;
+        //                flag.Link(planeAnchor1);
+        //            }
+        //        }
+        //        break;
+        //}
     }
 }

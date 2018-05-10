@@ -19,7 +19,7 @@ public class InputAxis
     private float x = 0;
     private float y = 0;
 
-    private float linearSlope = 4;
+    private float linearSlope = 3;
     private float linearMaxX;
     private float logBase = 1.1f;
     private float logMaxX;
