@@ -3,35 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Player{
-
-    private InputSettings inputSettings = new InputSettings();
+public class Player : MonoBehaviour
+{
     public Plane plane;
-    public int teamNumber;   
+    public int teamNumber;
 
-    public void Init()
+    public CustomInput customInput;
+
+    void Start()
     {
-        inputSettings.InitDict(plane, teamNumber);
+        customInput.Init(plane, teamNumber);
     }
 
-    public void HandleInput()
+    public void Update()
     {
-        foreach (KeyValuePair<string, InputEntity> entry in inputSettings.KeyMapping)
+        float rotation = customInput.GetAxis("Horizontal");
+        if (rotation != 0)
         {
-            InputEntity inputEntity = entry.Value;
-            if (Input.GetKeyDown(inputEntity.InputCode))
-            {
-                inputEntity.Pressed = true;
-            }
-            if (Input.GetKeyUp(inputEntity.InputCode))
-            {
-                inputEntity.Pressed = false;
-            }
-            if (inputEntity.Pressed)
-            {
-                inputEntity.InputAction.Invoke();
-            }
+            plane.Rotate(rotation);
         }
+        customInput.HandleInput();
     }
+
 }

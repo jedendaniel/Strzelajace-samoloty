@@ -112,12 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &202824585 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114400085722939326, guid: f888803768a92cb41b4ed9dda90f3846,
-    type: 2}
-  m_PrefabInternal: {fileID: 310209149}
-  m_Script: {fileID: 11500000, guid: bda15ef925482a146a227f6a00d9fd42, type: 3}
 --- !u!1001 &242430560
 Prefab:
   m_ObjectHideFlags: 0
@@ -172,6 +166,11 @@ Prefab:
       propertyPath: m_Positions.Array.data[2].x
       value: -5.95
       objectReference: {fileID: 0}
+    - target: {fileID: 114601260786038984, guid: bf91386cc93957646a5072224169703a,
+        type: 2}
+      propertyPath: plane
+      value: 
+      objectReference: {fileID: 1651243586}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf91386cc93957646a5072224169703a, type: 2}
   m_IsPrefabParent: 0
@@ -462,6 +461,54 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1702455982}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &688811903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 688811905}
+  - component: {fileID: 688811904}
+  m_Layer: 0
+  m_Name: Player1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &688811904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688811903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abda2dcb58238c4eb0032bca71aa636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 1651243586}
+  teamNumber: 1
+  customInput:
+    axesArray:
+    - positiveButton: 97
+      negativeButton: 100
+      sensitivity: 0.03
+      maxRotationValue: 2
+--- !u!4 &688811905
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688811903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3470173, y: -0.41971704, z: -0.11892046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &790766218
 Prefab:
   m_ObjectHideFlags: 0
@@ -569,11 +616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endGameMessage: {fileID: 0}
-  players:
-  - plane: {fileID: 1651243586}
-    teamNumber: 1
-  - plane: {fileID: 202824585}
-    teamNumber: 2
 --- !u!1 &1052130593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1494,7 @@ RectTransform:
   m_GameObject: {fileID: 1709546404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 84.63}
-  m_LocalScale: {x: 0.014814815, y: 0.014814815, z: 0.014814815}
+  m_LocalScale: {x: 0.0149700595, y: 0.0149700595, z: 0.0149700595}
   m_Children:
   - {fileID: 1379729920}
   - {fileID: 1556017495}

@@ -43,9 +43,6 @@ public class Plane : MonoBehaviour
     float baseTime;
     bool inBase = false;
 
-    [SerializeField]
-    private CustomInput customInput;
-
 
     public Flag flag { get; set; }
 
@@ -55,16 +52,10 @@ public class Plane : MonoBehaviour
         healthPoints = details.maxHealth;
         nameText.text = details.name;
         weapon.Init(details.teamNumber);
-        customInput.Init();
     }
 
     private void Update()
     {
-        float rotation = customInput.GetAxis("Horizontal");
-        if (rotation != 0)
-        {
-            Rotate(rotation);
-        }
         if (inBase && healthPoints < details.maxHealth)
         {
             if (baseTime + details.healDelay <= Time.fixedTime)

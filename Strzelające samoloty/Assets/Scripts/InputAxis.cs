@@ -24,6 +24,7 @@ public class InputAxis
     private float logBase = 1.1f;
     private float logMaxX;
 
+    //TODO: Why constructors (or for sure that one constructor) are/is called so many times? 
     public InputAxis()
     {
         linearMaxX = maxRotationValue / linearSlope;
