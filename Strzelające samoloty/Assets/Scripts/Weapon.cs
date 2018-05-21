@@ -6,16 +6,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject bulletPrefab;
-    [SerializeField]
-    private Transform[] spawns;
+    public GameObject bulletPrefab;
+    public Transform[] spawns;
 
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float rate;
-
+    public float speed;
+    public float rate;
+    
     private float shootTime = 0;
 
     private int teamNumber;
@@ -25,7 +21,7 @@ public class Weapon : MonoBehaviour
         this.teamNumber = team;
     }
 
-    public void Fire(Vector2 planeVelocity)
+    public void Fire(Plane plane)
     {
         if (shootTime >= rate)
         {
@@ -34,12 +30,9 @@ public class Weapon : MonoBehaviour
             foreach (var spawn in spawns)
             {
                 rocketInstance = GameObject.Instantiate(bulletPrefab, spawn.position, spawn.rotation) as GameObject;
-                rocketInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(planeVelocity.x + spawn.up.x * speed, planeVelocity.y + spawn.up.y * speed);
+                rocketInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(spawn.up.x * speed, spawn.up.y * speed);
                 rocketInstance.transform.parent = this.transform;
-                if (teamNumber == 1)
-                    rocketInstance.layer = 13;
-                else
-                    rocketInstance.layer = 14;
+                rocketInstance.layer = LayerMask.NameToLayer("Bullets" + plane.details.teamNumber.ToString());
             }
         }
         

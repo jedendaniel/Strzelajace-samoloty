@@ -76,14 +76,13 @@ public class Plane : MonoBehaviour
 
     public void Rotate(float rotation)
     {
-
         rb.angularVelocity = 0;
         rb.rotation += rotation * details.rotateScale;
     }
 
     public void Shoot()
     {
-        weapon.Fire(rb.velocity);            
+        weapon.Fire(this);            
     }
 
     public void RecoverHealth()

@@ -262,18 +262,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda15ef925482a146a227f6a00d9fd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  details:
+    name: 
+    teamNumber: 0
+    forceScale: 6
+    rotateScale: 5
+    maxVelocity: 6
+    shootRate: 0.3
+    maxHealth: 100
+    healDelay: 0
+    healRate: 0
   healthBar: {fileID: 0}
   nameText: {fileID: 0}
   weapon: {fileID: 114897518867180514}
   planeAnchor1: {fileID: 4060969451848160}
   planeAnchor2: {fileID: 4408122741464512}
   planeBottom: {fileID: 0}
-  customInput:
-    axesArray:
-    - positiveButton: 97
-      negativeButton: 100
-      sensitivity: 0.01
-      maxRotationValue: 2
 --- !u!114 &114897518867180514
 MonoBehaviour:
   m_ObjectHideFlags: 1

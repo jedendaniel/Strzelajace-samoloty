@@ -501,6 +501,7 @@ MonoBehaviour:
   flagAnchor1: {fileID: 4288506048247072}
   flagAnchor2: {fileID: 4655523738168510}
   plane: {fileID: 0}
+  StickAnchor: {fileID: 0}
   teamNumber: 1
   inBase: 0
 --- !u!114 &114812029212874532
