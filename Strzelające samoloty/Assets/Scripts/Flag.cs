@@ -81,7 +81,7 @@ public class Flag : MonoBehaviour {
                 Plane p = other.GetComponent<Plane>();
                 if (p.flag == null)
                 {
-                    if (teamNumber != p.details.teamNumber || (teamNumber == p.details.teamNumber && !inBase))
+                    if (teamNumber != p.teamNumber || (teamNumber == p.teamNumber && !inBase))
                     {
                         transform.Find("FlagAnchor1").GetComponent<DistanceJoint2D>().connectedBody = other.transform.Find("PlaneAnchor1").GetComponent<Rigidbody2D>();
                         transform.Find("FlagAnchor2").GetComponent<DistanceJoint2D>().connectedBody = other.transform.Find("PlaneAnchor1").GetComponent<Rigidbody2D>();

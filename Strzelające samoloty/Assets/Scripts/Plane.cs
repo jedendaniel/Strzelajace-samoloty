@@ -7,10 +7,6 @@ using UnityEngine.UI;
 [Serializable]
 public class PlaneDetails
 {
-    public string name;
-    [Range(1,2)]
-    public int teamNumber;
-
     public float forceScale = 6f;
     public float rotateScale = 5f;
     public float maxVelocity = 6f;
@@ -24,15 +20,19 @@ public class Plane : MonoBehaviour
 {
     public PlaneDetails details;
 
-    public Image healthBar;
-    public Text nameText;
     public Weapon weapon;
     public Transform planeAnchor1;
     public Transform planeAnchor2;
-    public Collider2D planeBottom;
+    //public Collider2D planeBottom;
 
     Rigidbody2D rb;
 
+    [HideInInspector]
+    public string playerName;
+    [HideInInspector]
+    public int teamNumber;
+
+    Image healthBar;
     float healthPoints;
     float baseTime;
     bool inBase = false;
@@ -44,8 +44,6 @@ public class Plane : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         healthPoints = details.maxHealth;
-        nameText.text = details.name;
-        weapon.Init(details.teamNumber);
     }
 
     private void Update()
@@ -57,6 +55,14 @@ public class Plane : MonoBehaviour
                 RecoverHealth();
             }
         }
+    }
+
+    public void Init(string playerName, int teamNumber, Image healthBar)
+    {
+        this.playerName = playerName;
+        this.teamNumber = teamNumber;
+        this.healthBar = healthBar;
+        weapon.Init(teamNumber);
     }
 
     public void MoveForward()
@@ -123,9 +129,9 @@ public class Plane : MonoBehaviour
                 baseTime = Time.fixedTime;
                 inBase = true;
                 Base planeBase = collision.gameObject.GetComponent<Base>();
-                if (flag != null && planeBase.TeamNumber == details.teamNumber)
+                if (flag != null && planeBase.TeamNumber == teamNumber)
                 {
-                    if (flag.teamNumber == details.teamNumber)
+                    if (flag.teamNumber == teamNumber)
                     {
                         flag.BackToStick();
                         flag = null;

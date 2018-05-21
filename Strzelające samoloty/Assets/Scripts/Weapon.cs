@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
                 rocketInstance = GameObject.Instantiate(bulletPrefab, spawn.position, spawn.rotation) as GameObject;
                 rocketInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(spawn.up.x * speed, spawn.up.y * speed);
                 rocketInstance.transform.parent = this.transform;
-                rocketInstance.layer = LayerMask.NameToLayer("Bullets" + plane.details.teamNumber.ToString());
+                rocketInstance.layer = LayerMask.NameToLayer("Bullets" + plane.teamNumber.ToString());
             }
         }
         

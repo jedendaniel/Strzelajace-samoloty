@@ -114,5 +114,5 @@ MonoBehaviour:
   spawns:
   - {fileID: 4707512285598276}
   - {fileID: 4873505439195510}
-  speed: 8
-  rate: 0.3
+  speed: 7
+  rate: 0.6
