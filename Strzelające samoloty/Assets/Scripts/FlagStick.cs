@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FlagStick : MonoBehaviour {
 
-    [SerializeField]
-    private int teamNumber;
+    public int teamNumber;
 
 	void Start () {
 		

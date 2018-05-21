@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Base : MonoBehaviour {
 
-    [SerializeField]
     public int TeamNumber;
     
 	void Start () {

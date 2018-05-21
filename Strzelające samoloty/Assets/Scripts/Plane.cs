@@ -24,18 +24,12 @@ public class Plane : MonoBehaviour
 {
     public PlaneDetails details;
 
-    [SerializeField]
-    private Image healthBar;
-    [SerializeField]
-    private Text nameText;
-    [SerializeField]
-    private Weapon weapon;
-    [SerializeField]
-    private Transform planeAnchor1;
-    [SerializeField]
-    private Transform planeAnchor2;
-    [SerializeField]
-    private Collider2D planeBottom;
+    public Image healthBar;
+    public Text nameText;
+    public Weapon weapon;
+    public Transform planeAnchor1;
+    public Transform planeAnchor2;
+    public Collider2D planeBottom;
 
     Rigidbody2D rb;
 

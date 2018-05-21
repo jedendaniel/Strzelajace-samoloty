@@ -9,8 +9,7 @@ public class CustomInput
 {
     private Dictionary<string, InputAxis> axesDict = new Dictionary<string, InputAxis>();
 
-    [SerializeField]
-    private InputAxis[] axesArray;
+    public InputAxis[] axesArray;
 
     public InputSettings inputSettings = new InputSettings();
 

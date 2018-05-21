@@ -7,14 +7,10 @@ using UnityEngine;
 [Serializable]
 public class InputAxis
 {
-    [SerializeField]
-    private KeyCode positiveButton;
-    [SerializeField]
-    private KeyCode negativeButton;
-    [SerializeField]
-    private float sensitivity = 0.01f;
-    [SerializeField]
-    private float maxRotationValue = 2;
+    public KeyCode positiveButton;
+    public KeyCode negativeButton;
+    public  float sensitivity = 0.01f;
+    public float maxRotationValue = 2;
 
     private float x = 0;
     private float y = 0;
