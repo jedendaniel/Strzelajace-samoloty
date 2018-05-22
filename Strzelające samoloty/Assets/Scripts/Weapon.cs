@@ -37,7 +37,6 @@ public class Weapon : MonoBehaviour
                     rocketInstance.SetActive(true);
                     rocketInstance.layer = LayerMask.NameToLayer("Bullets" + plane.teamNumber.ToString());
                     rocketInstance.gameObject.transform.position = new Vector3(spawn.position.x, spawn.position.y, 0.1f);
-                    //rocketInstance.GetComponent<Rigidbody2D>().position = spawn.position;
                     rocketInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(spawn.up.x * speed, spawn.up.y * speed);
                 }
             }

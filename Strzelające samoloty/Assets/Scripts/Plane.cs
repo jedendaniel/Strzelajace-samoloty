@@ -57,12 +57,13 @@ public class Plane : MonoBehaviour
         }
     }
 
-    public void Init(string playerName, int teamNumber, Image healthBar, BulletsManager bulletsManager)
+    public void Init(string playerName, int teamNumber, Image healthBar, BulletsManager bulletsManager, Color color)
     {
         this.playerName = playerName;
         this.teamNumber = teamNumber;
         this.healthBar = healthBar;
         weapon.Init(teamNumber, bulletsManager);
+        this.GetComponent<SpriteRenderer>().color = color;
     }
 
     public void MoveForward()

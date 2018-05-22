@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Plane plane;
+    public Flag flag;
     public BulletsManager bulletsManager;
     public string playerName;
     public int teamNumber;
     public Text nameText;
     public Image healthBar;
+    public Color color;
 
     public CustomInput customInput;
 
@@ -19,7 +21,8 @@ public class Player : MonoBehaviour
     {
         nameText.text = playerName;
         customInput.Init(plane, teamNumber);
-        plane.Init(playerName, teamNumber, healthBar, bulletsManager);
+        plane.Init(playerName, teamNumber, healthBar, bulletsManager, color);
+        flag.Init(plane, color);
     }
 
     public void Update()

@@ -7,7 +7,8 @@ public class Flag : MonoBehaviour {
     public LineRenderer line;
     public Transform flagAnchor1;
     public Transform flagAnchor2;
-    public Plane plane;
+    public SpriteRenderer middle;
+    Plane plane;
     Vector3 basePosition;
     public Transform StickAnchor;
 
@@ -29,6 +30,12 @@ public class Flag : MonoBehaviour {
         {
             UpdateLine();
         }
+    }
+
+    public void Init(Plane plane, Color color)
+    {
+        this.plane = plane;
+        middle.color = color;
     }
 
     public void BackToStick()

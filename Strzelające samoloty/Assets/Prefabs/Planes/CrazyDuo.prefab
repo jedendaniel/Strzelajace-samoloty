@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 60691011021203456}
   - component: {fileID: 50868784091859244}
   - component: {fileID: 114913697430009432}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: CrazyDuo
   m_TagString: Plane
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4819754805195124}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PlaneTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1218855332542948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.6529827, y: 0.9197171, z: 0.11892046}
+  m_LocalPosition: {x: -5.83, y: 0.72, z: 0.11892046}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4819754805195124}
@@ -344,8 +344,8 @@ MonoBehaviour:
     maxVelocity: 6
     shootRate: 0.3
     maxHealth: 120
-    healDelay: 20
-    healRate: 10
+    healDelay: 1
+    healRate: 0.5
   weapon: {fileID: 114743034535063250}
   planeAnchor1: {fileID: 4033203044861164}
   planeAnchor2: {fileID: 4342425159162274}
@@ -386,7 +386,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7da96707293e19b40b48407507e88edf, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -409,7 +409,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.03999996, y: -0.07999997}
+  m_ConnectedAnchor: {x: -0.03999996, y: -0.07999998}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -432,7 +432,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0020000935, y: -0.10299997}
+  m_ConnectedAnchor: {x: 0.0020000935, y: -0.102999985}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
