@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Plane plane;
+    public BulletsManager bulletsManager;
     public string playerName;
     public int teamNumber;
     public Text nameText;
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour
     {
         nameText.text = playerName;
         customInput.Init(plane, teamNumber);
-        plane.Init(playerName, teamNumber, healthBar);
+        plane.Init(playerName, teamNumber, healthBar, bulletsManager);
     }
 
     public void Update()

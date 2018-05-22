@@ -57,12 +57,12 @@ public class Plane : MonoBehaviour
         }
     }
 
-    public void Init(string playerName, int teamNumber, Image healthBar)
+    public void Init(string playerName, int teamNumber, Image healthBar, BulletsManager bulletsManager)
     {
         this.playerName = playerName;
         this.teamNumber = teamNumber;
         this.healthBar = healthBar;
-        weapon.Init(teamNumber);
+        weapon.Init(teamNumber, bulletsManager);
     }
 
     public void MoveForward()
@@ -123,7 +123,6 @@ public class Plane : MonoBehaviour
             case "Bullet":
                 Bullet bullet = collision.gameObject.GetComponent<Bullet>();
                 GainDamage(bullet.power);
-                Destroy(collision.gameObject);
                 break;
             case "Base":
                 baseTime = Time.fixedTime;

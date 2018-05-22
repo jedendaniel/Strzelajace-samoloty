@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        gameObject.transform.position = new Vector3(0, 0, -200);
+        gameObject.SetActive(false);
     }
 }
