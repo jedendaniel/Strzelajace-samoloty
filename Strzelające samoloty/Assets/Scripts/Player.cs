@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public string playerName;
     public int teamNumber;
     public Text nameText;
-    Image healthBar;
+    public Image healthBar;
 
     public CustomInput customInput;
 

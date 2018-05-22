@@ -1054,6 +1054,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4467608614968848, guid: 24f594be246c171469cbf90eef561bcc,
     type: 2}
   m_PrefabInternal: {fileID: 496445314}
+--- !u!114 &497523555 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114978999668289102, guid: 2a51a47602a8c794692c8d78f575b5c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1702455982}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &546784725
 Prefab:
   m_ObjectHideFlags: 0
@@ -1299,6 +1305,7 @@ MonoBehaviour:
   playerName: Player1
   teamNumber: 1
   nameText: {fileID: 1379729921}
+  healthBar: {fileID: 497523555}
   customInput:
     axesArray:
     - positiveButton: 97
@@ -2073,6 +2080,7 @@ MonoBehaviour:
   playerName: Player2
   teamNumber: 2
   nameText: {fileID: 1556017496}
+  healthBar: {fileID: 1204560095}
   customInput:
     axesArray:
     - positiveButton: 276
@@ -2094,6 +2102,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204560095 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114978999668289102, guid: 2a51a47602a8c794692c8d78f575b5c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1924668567}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!224 &1290121121 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224815777637716092, guid: 2a51a47602a8c794692c8d78f575b5c1,

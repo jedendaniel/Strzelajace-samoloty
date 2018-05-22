@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
         if(planes.Count == 1)
         {
             Time.timeScale = 0;
-            endGameMessage.text = planes[0].name + " wins!";
+            endGameMessage.text = planes[0].playerName + " wins!";
         }
     }
 
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
     public void WinGame(Plane plane)
     {
         Time.timeScale = 0;
-        endGameMessage.text = plane.name + " wins!";
+        endGameMessage.text = plane.playerName + " wins!";
     }
 
     public void EndGame(Plane plane)
